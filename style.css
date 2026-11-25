@@ -1,0 +1,112 @@
+/* Переменные */
+:root {
+  --bg: #faf8ef;
+  --text: #f151cb;
+  --board: #fbc1eb;
+  --cell: #964e89;
+  --accent: #6a2060;
+  --light: #f9f6f2;
+  --gap: 12px;
+  --radius: 6px;
+  --anim: 120ms;
+}
+ 
+/*  Сброс и основа */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+ 
+.app {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 16px;
+}
+ 
+.hidden {
+  display: none !important;
+}
+ 
+/* Шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+ 
+.header__title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+ 
+.scores {
+  display: flex;
+  gap: 8px;
+}
+ 
+.score {
+  min-width: 76px;
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  background: var(--board);
+  color: #fff;
+  text-align: center;
+}
+ 
+.score__label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #eee4da;
+}
+ 
+.score__value {
+  font-size: 22px;
+  font-weight: 700;
+}
+ 
+/* ===== Кнопки ===== */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+ 
+.btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--light);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+ 
+.btn:hover {
+  opacity: 0.85;
+}
+ 
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+ 
+.btn--accent {
+  background: #f59563;
+}
