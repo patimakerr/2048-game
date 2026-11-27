@@ -30,6 +30,16 @@
  
     <section class="board-wrap">
       <div class="board" id="board"></div>
+            <div class="game-over hidden" id="game-over">
+        <p class="game-over__message" id="game-over-message">Игра окончена!</p>
+        <p class="game-over__score">Ваш счёт: <span id="final-score">0</span></p>
+        <form class="game-over__form" id="save-form">
+          <input class="input" id="player-name" type="text" placeholder="Введите имя" maxlength="20" autocomplete="off">
+          <button class="btn btn--accent" type="submit">Сохранить результат</button>
+        </form>
+        <button class="btn" id="over-restart-btn" type="button">↻ Начать заново</button>
+      </div>
+
     </section>
   </main>
 </body>
