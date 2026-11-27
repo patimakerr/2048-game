@@ -23,9 +23,9 @@
     </header>
  
     <div class="toolbar">
-      <button class="btn" id="undo-btn" type="button">↶ Отменить ход</button>
-      <button class="btn" id="restart-btn" type="button">↻ Начать заново</button>
-      <button class="btn" id="leaders-btn" type="button">🏆 Лидеры</button>
+      <button class="btn" id="undo-btn" type="button">Отменить ход</button>
+      <button class="btn" id="restart-btn" type="button">Начать заново</button>
+      <button class="btn" id="leaders-btn" type="button">Лидеры</button>
     </div>
  
     <section class="board-wrap">
@@ -37,10 +37,35 @@
           <input class="input" id="player-name" type="text" placeholder="Введите имя" maxlength="20" autocomplete="off">
           <button class="btn btn--accent" type="submit">Сохранить результат</button>
         </form>
-        <button class="btn" id="over-restart-btn" type="button">↻ Начать заново</button>
+        <button class="btn" id="over-restart-btn" type="button">Начать заново</button>
       </div>
-
     </section>
+        <div class="controls" id="controls">
+      <button class="controls__btn controls__btn--up" data-dir="up" type="button" aria-label="Вверх">▲</button>
+      <button class="controls__btn controls__btn--left" data-dir="left" type="button" aria-label="Влево">◀</button>
+      <button class="controls__btn controls__btn--down" data-dir="down" type="button" aria-label="Вниз">▼</button>
+      <button class="controls__btn controls__btn--right" data-dir="right" type="button" aria-label="Вправо">▶</button>
+    </div>
+ 
+    <p class="hint" id="hint">Компьютер: стрелки на клавиатуре. Телефон: кнопки под полем.</p>
   </main>
+  <div class="modal hidden" id="leaders-modal">
+    <div class="modal__content">
+      <h2 class="modal__title">Таблица лидеров</h2>
+      <table class="leaders">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Имя</th>
+            <th>Очки</th>
+            <th>Дата</th>
+          </tr>
+        </thead>
+        <tbody id="leaders-body"></tbody>
+      </table>
+      <p class="leaders__empty hidden" id="leaders-empty">Пока нет ни одного рекорда</p>
+      <button class="btn" id="leaders-close" type="button">Закрыть</button>
+    </div>
+  </div>
 </body>
 </html>
