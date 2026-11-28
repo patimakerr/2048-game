@@ -78,7 +78,7 @@ body {
   font-weight: 700;
 }
  
-/* ===== Кнопки ===== */
+/* Кнопки */
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -108,5 +108,79 @@ body {
 }
  
 .btn--accent {
-  background: #f59563;
+  background: #e730bf;
+}
+
+/* Игровое поле */
+.board-wrap {
+  position: relative;
+}
+ 
+.board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--gap);
+  padding: var(--gap);
+  border-radius: var(--radius);
+  background: var(--board);
+  touch-action: none;
+  user-select: none;
+}
+ 
+.cell {
+  border-radius: var(--radius);
+  background: var(--cell);
+}
+ 
+/* Плитки */
+.tile {
+  position: absolute;
+  top: var(--gap);
+  left: var(--gap);
+  width: calc((100% - 5 * var(--gap)) / 4);
+  height: calc((100% - 5 * var(--gap)) / 4);
+  transform: translate(
+    calc(var(--x) * (100% + var(--gap))),
+    calc(var(--y) * (100% + var(--gap)))
+  );
+}
+ 
+.tile__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: clamp(22px, 8vw, 44px);
+  font-weight: 700;
+}
+ 
+.tile--2 .tile__inner { background: #eee4da; color: #776e65; }
+.tile--4 .tile__inner { background: #ede0c8; color: #776e65; }
+.tile--8 .tile__inner { background: #f2b179; color: #f9f6f2; }
+.tile--16 .tile__inner { background: #f59563; color: #f9f6f2; }
+.tile--32 .tile__inner { background: #f67c5f; color: #f9f6f2; }
+.tile--64 .tile__inner { background: #f65e3b; color: #f9f6f2; }
+.tile--128 .tile__inner { background: #edcf72; color: #f9f6f2; }
+.tile--256 .tile__inner { background: #edcc61; color: #f9f6f2; }
+.tile--512 .tile__inner { background: #edc850; color: #f9f6f2; }
+.tile--1024 .tile__inner { background: #edc53f; color: #f9f6f2; }
+.tile--2048 .tile__inner { background: #edc22e; color: #f9f6f2; }
+.tile--super .tile__inner { background: #3c3a32; color: #f9f6f2; }
+ 
+.tile--128 .tile__inner,
+.tile--256 .tile__inner,
+.tile--512 .tile__inner {
+  font-size: clamp(18px, 7vw, 38px);
+}
+ 
+.tile--1024 .tile__inner,
+.tile--2048 .tile__inner,
+.tile--super .tile__inner {
+  font-size: clamp(14px, 5.5vw, 30px);
 }
